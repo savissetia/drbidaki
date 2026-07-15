@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پروپوزال ری‌برندینگ و ترنسفورمیشن دیجیتال کلینیک فیزیوتراپی دکتر بیدکی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background: radial-gradient(circle at top left, #0f172a 0%, #020617 40%, #000000 100%);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+        }
+        .glass-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white">
+
+    <!-- هدر اختصاصی ساویس ستیا -->
+    <header class="border-b border-slate-800/80 bg-slate-950/50 backdrop-blur sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20">
+                    SS
+                </div>
+                <span class="text-xl font-black tracking-wide bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">ساویس ستیا | سداد و اقتدار در مارکتینگ</span>
+            </div>
+            <div class="text-xs text-slate-400 border border-slate-800 px-3 py-1.5 rounded-full bg-slate-900/50">
+                پروپوزال اختصاصی رشد و توسعه کلینیک بیدکی
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12 max-w-7xl">
+        <!-- هیرو سکشن پروپوزال -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="px-4 py-1.5 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-semibold border border-indigo-500/25 uppercase tracking-widest">
+                STRATEGIC BRAND TRANSFORMATION PROPOSAL
+            </span>
+            <h1 class="text-4xl md:text-5xl font-black mt-6 mb-6 leading-tight">
+                پروپوزال مهندسی‌شده رشد و ترنسفورمیشن <br>
+                <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">کلینیک فیزیوتراپی دکتر بیدکی</span>
+            </h1>
+            <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+                نقشه راه علمی، مبتنی بر داده‌های آکادمیک مدیریت درمان و الگوریتم‌های مدرن دیجیتال مارکتینگ. طراحی شده توسط کمال تسبیحی.
+            </p>
+        </div>
+
+        <!-- بخش نمودارهای تحلیلی و مقایسه‌ای -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <!-- نمودار اول -->
+            <div class="glass-card p-6 md:p-8 rounded-3xl">
+                <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                    تحلیل مقایسه‌ای وضعیت سهم بازار محلی (Local Share of Voice)
+                </h3>
+                <p class="text-xs text-slate-400 mb-6">مقایسه قدرت جذب بیمار، اعتبار پلتفرم‌ها و یکپارچگی برند پیش و پس از اجرای پروژه</p>
+                <div class="h-80 w-full relative">
+                    <canvas id="marketChart"></canvas>
+                </div>
+            </div>
+            <!-- نمودار دوم -->
+            <div class="glass-card p-6 md:p-8 rounded-3xl">
+                <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                    پیش‌بینی روند صعودی سرنخ‌های جذب بیمار (Patient Lead Generation)
+                </h3>
+                <p class="text-xs text-slate-400 mb-6">رشد تخمینی نرخ تبدیل رزرو نوبت آنلاین و مراجعات حضوری از ماه اول تا ششم کلینیک</p>
+                <div class="h-80 w-full relative">
+                    <canvas id="roiChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- بخش جدید: نمودار KPI و شاخص‌های موفقیت -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+            <div class="glass-card p-6 md:p-8 rounded-3xl lg:col-span-2">
+                <h3 class="text-lg font-bold mb-2 flex items-center gap-2 text-emerald-400">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                    نمودار شاخص‌های کلیدی عملکرد و ارزیابی موفقیت پروژه (KPIs & Success Rate)
+                </h3>
+                <p class="text-xs text-slate-400 mb-6">هدف‌گذاری درصد تحقق اهداف عملیاتی در پایان فازهای شش‌گانه رشد</p>
+                <div class="h-72 w-full relative">
+                    <canvas id="kpiChart"></canvas>
+                </div>
+            </div>
+            <div class="glass-card p-6 md:p-8 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <h4 class="text-base font-bold text-amber-400 mb-4">🎯 ماتریس اهداف موفقیت عددی (تا ماه ششم)</h4>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>کاهش نرخ عدم مراجعه (No-show):</span>
+                            <span class="text-emerald-400 font-bold">۴۰٪-</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>رشد ورودی ارگانیک سئو وب‌سایت:</span>
+                            <span class="text-emerald-400 font-bold">۳۵۰٪+</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>سرعت لود زیرساخت فنی سایت:</span>
+                            <span class="text-emerald-400 font-bold">زیر ۲ ثانیه</span>
+                        </li>
+                        <li class="flex justify-between border-b border-slate-800 pb-2">
+                            <span>نرخ تعامل وایرال ویدیو مارکتینگ:</span>
+                            <span class="text-emerald-400 font-bold">۵.۸٪+</span>
+                        </li>
+                        <li class="flex justify-between pb-2">
+                            <span>رضایت‌مندی مراجعین در CRM:</span>
+                            <span class="text-emerald-400 font-bold">۹۶.۴٪</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-4 p-3 bg-slate-900/60 rounded-xl border border-slate-800 text-[11px] text-slate-400">
+                    💡 تمام شاخص‌ها ماهانه توسط تیم فنی ساویس ستیا مانیتور شده و گزارش آن مستقیماً تقدیم مدیریت می‌گردد.
+                </div>
+            </div>
+        </section>
+
+        <!-- فاز ۱: هویت، اصالت و بازسازی فیزیکی/دیجیتال -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-indigo-400">فاز اول: هویت، اصالت و بازسازی فیزیکی/دیجیتال برند (تعهدات ۱ تا ۴)</h2>
+                    <p class="text-sm text-slate-400 mt-1">تضمین بالاترین سطح جایگاه‌سازی علمی و بصری در ذهن بیمار جامعه هدف</p>
+                </div>
+                <span class="text-xs text-indigo-300 font-semibold mt-2 md:mt-0 px-3 py-1 bg-indigo-500/10 rounded-lg">بخش زیرساختی و طراحی</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- تعهد ۱ -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded">تعهد ۱</span>
+                            <span class="text-xs text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded font-bold">استراتژی هویت</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">طراحی و تدوین برندبوک تخصصی (Brandbook)</h3>
+                        <div class="space-y-4 text-sm text-slate-300">
+                            <p><strong class="text-pink-400 block mb-1">🎯 شرح تعهد اجرایی:</strong> تدوین پالت رنگ اختصاصی کلینیک، تایپوگرافی، طراحی مجدد و لوکس لوگو و تعیین لحن برند (نرم و علمی).</p>
+                            <p><strong class="text-indigo-400 block mb-1">🔬 تحلیل علمی و تجاری:</strong> بر اساس گزارش جامع Harvard Business Review، یکپارچگی هویت بصری پزشکان، میزان اعتماد ناخودآگاه بیماران جدید را در اولین نگاه تا ۲۳٪ بالا می‌برد و گارد پرداخت مبالغ درمان‌های نوین را می‌شکند.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تعهد ۲ -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded">تعهد ۲</span>
+                            <span class="text-xs text-fuchsia-400 bg-fuchsia-500/10 px-2.5 py-1 rounded font-bold">پاکسازی اعتبار</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">مرمت برند در فضای مجازی و فضای دیجیتال</h3>
+                        <div class="space-y-4 text-sm text-slate-300">
+                            <p><strong class="text-pink-400 block mb-1">🎯 شرح تعهد اجرایی:</strong> حذف اطلاعات متناقض قدیمی در سراسر وب، بازآفرینی صفحات و تبدیل آن‌ها به محیطی متوازن.</p>
+                            <p><strong class="text-indigo-400 block mb-1">🔬 تحلیل علمی و تجاری:</strong> طبق تئوری روانشناختی "اثر هاله"، قضاوت بیمار از کیفیت درمان شما مستقیماً تحت تاثیر آراستگی اولین کانال دیجیتالی است که از شما می‌بیند. مرمت برند مانع از نشت کاربران و مراجعین می‌شود.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تعهد ۳ -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded">تعهد ۳</span>
+                            <span class="text-xs text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded font-bold">اقلام چاپی</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">طراحی و اجرای کارت ویزیت، سربرگ و ست اداری لوکس</h3>
+                        <div class="space-y-4 text-sm text-slate-300">
+                            <p><strong class="text-pink-400 block mb-1">🎯 شرح تعهد اجرایی:</strong> طراحی اختصاصی کارت‌های نوبت‌دهی، پاکت‌ها و سربرگ نسخه‌ها با چاپ و متریال بی‌نظیر.</p>
+                            <p><strong class="text-indigo-400 block mb-1">🔬 تحلیل علمی و تجاری:</strong> بازاریابی لمسی (Haptic Marketing) ثابت کرده است که کیفیت فیزیکی کاغذ نسخه پزشک، وزن تجویزی تشخیص او را در ذهن بیمار بالا برده و فرآیند فالوآپ درمان را دقیق‌تر می‌کند.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تعهد ۴ -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded">تعهد ۴</span>
+                            <span class="text-xs text-fuchsia-400 bg-fuchsia-500/10 px-2.5 py-1 rounded font-bold">آموزش محتوایی</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">طراحی بروشور تبلیغاتی (مجازی، الکترونیک و کاغذی)</h3>
+                        <div class="space-y-4 text-sm text-slate-300">
+                            <p><strong class="text-pink-400 block mb-1">🎯 شرح تعهد اجرایی:</strong> تولید بروشورهای تعاملی هوشمند دیجیتال و چاپی ویژه دستگاه‌ها و متدهای تخصصی کلینیک.</p>
+                            <p><strong class="text-indigo-400 block mb-1">🔬 تحلیل علمی و تجاری:</strong> ساده‌سازی فرآیندهای مکانیکی درمان (مانند شاک‌ویو یا لیزر پرتوان) ابهام بیمار را به شدت کاهش داده و نرخ تمایل به خرید پکیج‌های درمانی را تا ۳۵٪ بهبود می‌دهد.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- فاز ۲: محلی‌سازی عمیق و تسخیر سرچ منطقه -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-purple-400">فاز دوم: انحصار مطلق جغرافیایی و پلتفرم‌های رفرال (تعهدات ۵ تا ۷)</h2>
+                    <p class="text-sm text-slate-400 mt-1">قرارگیری در صدر تمام پلتفرم‌هایی که بیماران روزانه برای پیدا کردن پزشک استفاده می‌کنند</p>
+                </div>
+                <span class="text-xs text-purple-300 font-semibold mt-2 md:mt-0 px-3 py-1 bg-purple-500/10 rounded-lg">سئو محلی و رفرال</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- تعهد ۵ -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-3 py-1 rounded block w-max mb-4">تعهد ۵</span>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">ثبت رسمی و بهینه‌سازی نقشه گوگل (Google Maps)</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            ارتقای رتبه کلینیک در کلمات کلیدی نظیر "بهترین فیزیوتراپی منطقه" در گوگل مپ. آمارها نشان می‌دهد ۴۶٪ جستجوهای پزشکی محلی هستند و رتبه‌های ۱ تا ۳ نقشه، بیش از ۷۰٪ زنگ‌خورها را به خود اختصاص می‌دهند.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- تعهد ۶ -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-3 py-1 rounded block w-max mb-4">تعهد ۶</span>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">ثبت در مسیریاب‌های اسنپ، ویز، نشان و بلد</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            بهینه‌سازی دسترسی و کاهش "اصطکاک رفت‌وآمد بیمار". بیماری که با درد شدید مواجه است نباید در فرآیند پیدا کردن آدرس و لوکیشن دقیق کلینیک دغدغه‌ای داشته باشد؛ این یعنی احترام و تکریم کامل بیمار.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- تعهد ۷ -->
+                <div class="glass-card p-8 rounded-3xl flex flex-col justify-between transition-all duration-300">
+                    <div>
+                        <span class="text-xs font-mono text-purple-400 bg-purple-500/10 px-3 py-1 rounded block w-max mb-4">تعهد ۷</span>
+                        <h3 class="text-xl font-bold mb-4 text-slate-100">ثبت مقتدرانه در تمامی سایت‌های رفرال پزشکی</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            حضور مقتدرانه با پروفایل‌های تایید شده در سایت‌های نوبت‌دهی (نوبت‌دات‌آی‌آر، دکترتو، پذیرش۲۴). این کار اعتبار دامنه اینترنتی کلینیک را بالا برده و بیماران سرگردان وب را شکار می‌کند.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- فاز ۳: مهندسی فنی وب‌سایت و انفجار سئو -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-emerald-400">فاز سوم: تبدیل وب‌سایت به ماشین نوبت‌دهی و مرجع علمی (تعهدات ۸ تا ۱۰)</h2>
+                    <p class="text-sm text-slate-400 mt-1">زیرساخت فنی بدون نقص همراه با استراتژی تولید محتوای سئو پذیر تراز اول</p>
+                </div>
+                <span class="text-xs text-emerald-300 font-semibold mt-2 md:mt-0 px-3 py-1 bg-emerald-500/10 rounded-lg">زیرساخت وب و سئو</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- تعهد ۸ -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">تعهد ۸ (فنی)</span>
+                    <h4 class="text-lg font-bold mt-2 mb-3 text-slate-100">بهینه‌سازی وب‌سایت و نصب لایسنس‌های اورجینال</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        نصب افزونه‌های پرمیوم و امنیتی، فعال‌سازی SSL مقتدر و بهبود سرعت لود سایت به زیر ۲ ثانیه طبق فاکتورهای رسمی Core Web Vitals گوگل جهت تضمین عدم فرار کاربر و رتبه‌گیری سریع در سرچ.
+                    </p>
+                </div>
+
+                <!-- تعهد ۹ -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">تعهد ۹ (تجربه کاربری)</span>
+                    <h4 class="text-lg font-bold mt-2 mb-3 text-slate-100">تغییرات ظاهری، لوگو، فونت و رنگ سازمان</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        اعمال کامل برندبوک روی سایت. پیاده‌سازی قانون هیک (Hick's Law) در طراحی مسیر دکمه‌های رزرو نوبت آنلاین به گونه‌ای که یک بیمار مسن نیز بتواند در ۳ کلیک ساده نوبت خود را قطعی کند.
+                    </p>
+                </div>
+
+                <!-- تعهد ۱۰ -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">تعهد ۱۰ (محتوا)</span>
+                    <h4 class="text-lg font-bold mt-2 mb-3 text-slate-100">نگارش ماهیانه ۱۰ مقاله فوق تخصصی سئو پذیر</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        نگارش مقالات علمی غنی پیرامون درمان‌های کلینیک. بازاریابی محتوایی طبق دیتای DemandGen تا ۶۲٪ ارزان‌تر از تبلیغات مستقیم بوده و ۳ برابر لید باکیفیت‌تر و وفادارتر تولید می‌کند.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- فاز ۴: پروداکشن تصویری لوکس و ویدیومارکتینگ مقتدرانه -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-pink-400">فاز چهارم: انقلاب رسانه‌ای تصویری و محتوای ویدیویی (تعهدات ۱۱ تا ۱۵)</h2>
+                    <p class="text-sm text-slate-400 mt-1">انتقال مستقیم حس تخصص و کیفیت دستگاه‌ها با استفاده از جادوی تصویربرداری لوکس</p>
+                </div>
+                <span class="text-xs text-pink-300 font-semibold mt-2 md:mt-0 px-3 py-1 bg-pink-500/10 rounded-lg">تولید محتوای چندرسانه‌ای</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- تعهد ۱۱ و ۱۲ -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono text-pink-400 bg-pink-500/10 px-3 py-1 rounded">تعهد ۱۱ و ۱۲</span>
+                        <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded">تصویربرداری لوکس</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-100">عکاسی صنعتی و دکوراتیو از مرکز، خدمات و دستگاه‌ها</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        اجرای شات‌های فوق حرفه‌ای و دکوراتیو با ادیت‌های ژورنالی از محیط کلینیک، پرسنل و پیشرفته‌ترین دستگاه‌های فیزیوتراپی شما. بیماران به تجهیزات مدرن و تمیزی امتیاز می‌دهند. این عکاسی هویت بصری سایت و کاتالوگ‌های شما را دگرگون می‌کند.
+                    </p>
+                </div>
+
+                <!-- تعهد ۱۳ و ۱۵ -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-xs font-mono text-pink-400 bg-pink-500/10 px-3 py-1 rounded">تعهد ۱۳ و ۱۵</span>
+                        <span class="text-xs text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded">ویدیو مارکتینگ</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-100">ساخت ۳ تیزر معرفی جامع مرکز و تولید ۸ ویدیوی ماهیانه</h3>
+                    <p class="text-sm text-slate-300 leading-relaxed mb-4">
+                        سناریونویسی و کارگردانی ۳ تیزر باشکوه برای وب‌سایت و شبکه‌های اجتماعی (اینستاگرام، تلگرام، بله، ایتا) همراه با ۸ ویدیو ریلز کاربردی و آموزشی در ماه. طبق دیتای Wyzowl، حدود ۸۴٪ مخاطبان با دیدن ویدیوهای تخصصی یک پزشک، ترغیب به مراجعه می‌شوند.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- تعهد ۱۴: معرفی متخصصین -->
+            <div class="glass-card p-8 rounded-3xl mt-8 border-r-4 border-pink-500 bg-gradient-to-l from-pink-950/25 to-slate-950/40">
+                <span class="text-xs font-mono text-pink-400 bg-pink-500/10 px-3 py-1 rounded mb-2 inline-block">تعهد ۱۴</span>
+                <h3 class="text-xl font-bold mb-2 text-slate-100">ویدیو اختصاصی معرفی متخصصین کلینیک</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    ایجاد ارتباط عاطفی و انسانی میان بیمار و کادر درمان پیش از مراجعه حضوری. این کار استرس بیماران ارتوپدی و مغز و اعصاب را کاهش داده و نرخ ماندگاری و ارجاع بالینی کلینیک دکتر بیدکی را به شکل چشمگیری افزایش می‌دهد.
+                </p>
+            </div>
+        </section>
+
+        <!-- فاز ۵: پکیج‌بندی، سیستم‌سازی و تکنولوژی مارکتینگ -->
+        <section class="mb-20">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-black text-amber-400">فاز پنجم: سیستم بازاریابی اتوماتیک و وفادارسازی بیماران (تعهدات ۱۶ تا ۲۰)</h2>
+                    <p class="text-sm text-slate-400 mt-1">تبدیل مراجعین یک‌باره به سفیران دائمی برند کلینیک با ابزارهای نوین مدیریت ارتباطات</p>
+                </div>
+                <span class="text-xs text-amber-300 font-semibold mt-2 md:mt-0 px-3 py-1 bg-amber-500/10 rounded-lg">سیستم‌سازی و مارکتینگ</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- تعهدات ۱۶ و ۱۷ -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-4 text-slate-100">پکیج‌بندی خدمات و مدیریت کانال‌های ارتباطی</h3>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li>
+                            <strong class="text-amber-400 block mb-1">تعهد ۱۶: پکیج‌بندی محصولات درمانی و پکیج‌های مالی</strong>
+                            استفاده از تکنیک روانشناسی Price Bundling برای کاهش درد پرداخت بیمار و ارائه پکیج‌های ترکیبی فیزیوتراپی و تمرین درمانی بهینه.
+                        </li>
+                        <li>
+                            <strong class="text-amber-400 block mb-1">تعهد ۱۷: مدیریت کانال‌های ۵گانه شبکه اجتماعی</strong>
+                            حضور، انتشار محتوا و پاسخگویی منظم در وب‌سایت، اینستاگرام، تلگرام، بله و ایتا به صورت کاملاً هماهنگ و متمرکز.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- تعهدات ۱۸ تا ۲۰ -->
+                <div class="glass-card p-8 rounded-3xl">
+                    <h3 class="text-xl font-bold mb-4 text-slate-100">کمپین تبلیغاتی، استقرار CRM و سیستم SMS مارکتینگ</h3>
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li>
+                            <strong class="text-purple-400 block mb-1">تعهد ۱۸: ۴ ساعت جلسه مشاوره برندینگ در ماه</strong>
+                            بررسی ماهانه داده‌های آماری جذب بیمار، تحلیل نرخ تبدیل کانال‌ها و بهینه‌سازی مداوم استراتژی‌ها با حضور مدیریت محترم.
+                        </li>
+                        <li>
+                            <strong class="text-purple-400 block mb-1">تعهد ۱۹: اجرای کمپین تبلیغاتی انفجاری (از ماه سوم)</strong>
+                            طراحی و اجرای پکیج تبلیغاتی گسترده برای جذب بیمار بر اساس دیتای جمع‌آوری شده دو ماه اول کاری جهت تضمین بالاترین بازدهی.
+                        </li>
+                        <li>
+                            <strong class="text-purple-400 block mb-1">تعهد ۲۰: استقرار CRM تخصصی درمان و سیستم SMS مارکتینگ هوشمند</strong>
+                            ثبت پرونده دیجیتال، سیستم خودکار یادآوری نوبت‌ها از طریق SMS هوشمند، راه اندازی منشی تلفنی منظم و پیگیری چرخه درمان بیماران رهاشده.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- بیانیه نهایی قدرت ساویس ستیا -->
+        <section class="glass-card p-8 rounded-3xl mb-12 border-l-4 border-indigo-500 bg-gradient-to-r from-indigo-950/25 to-slate-950/40">
+            <h3 class="text-2xl font-black mb-6 text-indigo-300">💎 بیانیه مقتدرانه ساویس ستیا خطاب به مدیریت کلینیک</h3>
+            <div class="text-sm text-slate-300 leading-relaxed space-y-4">
+                <p>
+                    سرکار خانم دکتر بیدکی، این پروپوزال یک لیست قیمت ساده نیست. این یک **سند مهندسی‌شده و یکپارچه** تحت مدیریت مستقیم اینجانب، **کمال تسبیحی** است. ما در ساویس ستیا خدمات پراکنده یا فریلنسری ارائه نمی‌دهیم؛ بلکه تمام ابعاد برند شما را از کدنویسی سایت تا سناریونویسی تیزرها و راه‌اندازی منشی تلفنی هوشمند به صورت یک ارکستر کاملاً هماهنگ به صدا درمی‌آوریم.
+                </p>
+                <p class="font-bold text-amber-400">
+                    هدف ما پر کردن کامل ظرفیت نوبت‌دهی کلینیک شما و تبدیل نام «دکتر بیدکی» به برند شماره یک و بلامنازع فیزیوتراپی کشور است. پاسخ کارشناسی ما به هرگونه تردید، ارائه‌ی دیتای علمی و نتایج شگفت‌انگیز مالی خواهد بود.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- فوتر با لایوت شیک -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500">
+        <p>تمام حقوق استراتژیک این پروپوزال متعلق به آژانس مارکتینگ ساویس ستیا و کمال تسبیحی می‌باشد | ژوئیه ۲۰۲۶</p>
+    </footer>
+
+    <!-- کدهای ایجاد نمودار با Chart.js به صورت کاملاً فیکس شده -->
+    <script>
+        // نمودار اول (راداری) - مقایسه وضعیت برند کلینیک بیدکی
+        const ctxMarket = document.getElementById('marketChart').getContext('2d');
+        new Chart(ctxMarket, {
+            type: 'radar',
+            data: {
+                labels: ['اعتماد اولیه بیمار', 'قدرت سئو محلی وب', 'یکپارچگی هویت بصری', 'نرخ حفظ بیمار (CRM)', 'حضور در پلتفرم‌های رفرال', 'جذابیت تیزرهای ویدیویی'],
+                datasets: [{
+                    label: 'وضعیت کنونی کلینیک',
+                    data: [45, 30, 25, 20, 35, 15],
+                    fill: true,
+                    backgroundColor: 'rgba(239, 68, 68, 0.15)',
+                    borderColor: 'rgb(239, 68, 68)',
+                    pointBackgroundColor: 'rgb(239, 68, 68)',
+                    pointBorderColor: '#fff',
+                }, {
+                    label: 'چشم‌انداز پس از اجرای ساویس ستیا',
+                    data: [95, 92, 98, 88, 90, 95],
+                    fill: true,
+                    backgroundColor: 'rgba(99, 102, 241, 0.2)',
+                    borderColor: 'rgb(99, 102, 241)',
+                    pointBackgroundColor: 'rgb(99, 102, 241)',
+                    pointBorderColor: '#fff',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { color: 'rgba(255, 255, 255, 0.7)', font: { family: 'Vazirmatn', size: 11 } },
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: 'rgba(255, 255, 255, 0.8)', font: { family: 'Vazirmatn' } }
+                    }
+                }
+            }
+        });
+
+        // نمودار دوم (خطی مدرن) - پیش‌بینی جذب لید بیمار (فیکس شده)
+        const ctxRoi = document.getElementById('roiChart').getContext('2d');
+        const gradientIndigo = ctxRoi.createLinearGradient(0, 0, 0, 300);
+        gradientIndigo.addColorStop(0, 'rgba(139, 92, 246, 0.4)');
+        gradientIndigo.addColorStop(1, 'rgba(139, 92, 246, 0)');
+
+        new Chart(ctxRoi, {
+            type: 'line',
+            data: {
+                labels: ['ماه اول', 'ماه دوم', 'ماه سوم (کمپین)', 'ماه چهارم', 'ماه پنجم', 'ماه ششم'],
+                datasets: [{
+                    label: 'تعداد سرنخ‌های جدید ماهانه (Patient Leads)',
+                    data: [15, 32, 78, 95, 115, 145],
+                    borderColor: 'rgb(34, 197, 94)',
+                    backgroundColor: gradientIndigo,
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: 'rgb(34, 197, 94)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)', font: { family: 'Vazirmatn' } }
+                    },
+                    y: {
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)', font: { family: 'Vazirmatn' } }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: 'rgba(255, 255, 255, 0.8)', font: { family: 'Vazirmatn' } }
+                    }
+                }
+            }
+        });
+
+        // نمودار سوم (بار چارت مدرن) - KPI و موفقیت اهداف
+        const ctxKpi = document.getElementById('kpiChart').getContext('2d');
+        new Chart(ctxKpi, {
+            type: 'bar',
+            data: {
+                labels: ['تکمیل زیرساخت هویت', 'انحصار سئو محلی', 'پایداری فنی سایت', 'تولید آرشیو تیزرها', 'استقرار پایگاه CRM'],
+                datasets: [{
+                    label: 'درصد تحقق هدف (KPI Success Rate %)',
+                    data: [100, 95, 98, 90, 88],
+                    backgroundColor: [
+                        'rgba(99, 102, 241, 0.7)',
+                        'rgba(168, 85, 247, 0.7)',
+                        'rgba(236, 72, 153, 0.7)',
+                        'rgba(245, 158, 11, 0.7)',
+                        'rgba(16, 185, 129, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgb(99, 102, 241)',
+                        'rgb(168, 85, 247)',
+                        'rgb(236, 72, 153)',
+                        'rgb(245, 158, 11)',
+                        'rgb(16, 185, 129)'
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: 'rgba(255, 255, 255, 0.7)', font: { family: 'Vazirmatn', size: 10 } }
+                    },
+                    y: {
+                        min: 0,
+                        max: 100,
+                        grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                        ticks: { color: 'rgba(255, 255, 255, 0.6)', font: { family: 'Vazirmatn' } }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: { color: 'rgba(255, 255, 255, 0.8)', font: { family: 'Vazirmatn' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
